@@ -1,3 +1,26 @@
+//creating module for event handler app in ng for like/dislikes
+var eventApp = angular.module("eventApp", [])
+//Creating and registering controller
+	.controller("eventController", function ($scope) {
+		var technologies =[
+			{ name: "C#", likes: 0, dislikes: 0 },
+			{ name: "ASP.NET", likes: 0, dislikes: 0 },
+			{ name: "SQL Server", likes: 0, dislikes: 0 },
+			{ name: "AngularJs", likes: 0, dislikes: 0 },
+		];
+	// name that will be used inside the scope of the controller
+	$scope.technologies = technologies;
+	$scope.incrementLikes= function(technology){
+		technology.likes++;
+	}
+	$scope.incrementDislikes= function(technology){
+		technology.dislikes++;
+	}
+	});
+
+
+
+//code for countryController
 var countryApp = angular.module("countryApp", []) //creating module
 	.controller("countryController", function ($scope) {  //Creating and registering controller
 		var countries	= [
@@ -28,8 +51,6 @@ var countryApp = angular.module("countryApp", []) //creating module
 		];
 		$scope.countries = countries; // name that will be used inside the scope of the controller
 	});
-
-
 
 //trying to see if this code interfare with the one above because I renamed the controller and changing the name in the markup as well
 var myApp = angular.module("myModule", []) //creating module

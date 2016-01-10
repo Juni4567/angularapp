@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="countryApp">
+<html lang="en" ng-app="eventApp">
 <head>
 	<meta charset="UTF-8">
 	<title>AngularJs Application</title>
@@ -7,13 +7,26 @@
 	<script src="scripts/scripts.js"></script>
 
 </head>
-<body ng-controller="countryController">
-	<ul>
-		<li ng-repeat="country in countries">{{country.name}}
-			<ul>
-				<li ng-repeat="city in country.cities">{{city.name}}</li>
-			</ul>
-		</li>
-	</ul>
+<body ng-controller="eventController">
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Likes</th>
+				<th>Dislikes</th>
+				<th>Action</th>
+			</tr>
+		</thead>		
+		<tbody>
+			<tr ng-repeat="technology in technologies">
+				<td>{{technology.name}}</td>
+				<td>{{technology.likes}}</td>
+				<td>{{technology.dislikes}}</td>
+				<td><input type="button" value="Like" ng-click="incrementLikes(technology)">
+					<input type="button" value="Dislike" ng-click="incrementDislikes(technology)">
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>
