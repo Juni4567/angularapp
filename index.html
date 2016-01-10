@@ -9,10 +9,13 @@
 </head>
 <body ng-controller="myController">
 	<div>
-		<p>First Name : {{ employee.firstName }}</p>
-		<p>Last Name : {{ employee.lastName }}</p>
-		<p>Gender : {{ employee.gender }}</p>
+		<p>Country Name : {{ countryInfo.name }}</p>
 	</div>
-
+	<div>
+		<p>Country Capital : {{ countryInfo.capital }}</p>
+	</div>
+	<div>
+		<img ng-src="{{countryInfo.flag}}" alt="Flag of {{countryInfo.name}}">
+	</div>
 </body>
 </html>
