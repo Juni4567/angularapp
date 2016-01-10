@@ -19,7 +19,6 @@ var eventApp = angular.module("eventApp", [])
 	});
 
 
-
 //code for countryController
 var countryApp = angular.module("countryApp", []) //creating module
 	.controller("countryController", function ($scope) {  //Creating and registering controller
