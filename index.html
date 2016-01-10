@@ -8,17 +8,23 @@
 
 </head>
 <body ng-controller="myController">
-	<input type="text" ng-model="countryInfo.name">
-	<input type="text" ng-model="countryInfo.capital">
-	<input type="text" ng-model="countryInfo.flag">
-	<div>
-		<p>Country Name : {{ countryInfo.name }}</p>
-	</div>
-	<div>
-		<p>Country Capital : {{ countryInfo.capital }}</p>
-	</div>
-	<div>
-		<img ng-src="{{countryInfo.flag}}" alt="Flag of {{countryInfo.name}}">
-	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Gender</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="employee in employees">
+				<td>{{employee.firstName}}</td>
+				<td>{{employee.lastName}}</td>
+				<td>{{employee.gender}}</td>
+				<td>{{employee.salary}}</td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>
