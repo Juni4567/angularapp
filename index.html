@@ -16,10 +16,10 @@
 				<th>Dislikes</th>
 				<th>Action</th>
 			</tr>
-		</thead>		
+		</thead>
 		<tbody>
 			<tr ng-repeat="technology in technologies">
-				<td>{{technology.name}}</td>
+				<td>{{technology.name | lowercase:true }</td>
 				<td>{{technology.likes}}</td>
 				<td>{{technology.dislikes}}</td>
 				<td><input type="button" value="Like" ng-click="incrementLikes(technology)">
