@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myModule">
+<html lang="en" ng-app="countryApp">
 <head>
 	<meta charset="UTF-8">
 	<title>AngularJs Application</title>
@@ -7,24 +7,13 @@
 	<script src="scripts/scripts.js"></script>
 
 </head>
-<body ng-controller="myController">
-	<table>
-		<thead>
-			<tr>
-				<th>First Name</th>
-				<th>Last Name</th>
-				<th>Gender</th>
-				<th>Salary</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="employee in employees">
-				<td>{{employee.firstName}}</td>
-				<td>{{employee.lastName}}</td>
-				<td>{{employee.gender}}</td>
-				<td>{{employee.salary}}</td>
-			</tr>
-		</tbody>
-	</table>
+<body ng-controller="countryController">
+	<ul>
+		<li ng-repeat="country in countries">{{country.name}}
+			<ul>
+				<li ng-repeat="city in country.cities">{{city.name}}</li>
+			</ul>
+		</li>
+	</ul>
 </body>
 </html>
