@@ -8,6 +8,7 @@
 
 </head>
 <body ng-controller="eventController">
+<input type="number" min="1" step="1" ng-model="rowLimit" />
 	<table border="1">
 		<thead>
 			<tr>
@@ -18,10 +19,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="technology in technologies">
-				<td>{{technology.name | lowercase:true }</td>
-				<td>{{technology.likes}}</td>
-				<td>{{technology.dislikes}}</td>
+		<!-- There are two filters in the following ng-repeat directive -->
+			<tr ng-repeat="technology in technologies | limitTo:rowLimit | orderBy: 'name' ">
+				<td>{{technology.name | uppercase }}</td>
+				<td>{{technology.likes }}</td>
+				<td>{{technology.dislikes | currency}}</td>
 				<td><input type="button" value="Like" ng-click="incrementLikes(technology)">
 					<input type="button" value="Dislike" ng-click="incrementDislikes(technology)">
 				</td>

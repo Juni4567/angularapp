@@ -1,4 +1,29 @@
 //creating module for event handler app in ng for like/dislikes
+var myApp = angular.module("myApp", [])
+//Creating and registering controller
+	.controller("eventController", function ($scope) {
+		var technologies =[
+			{ name: "C#", likes: 50054, dislikes: 0 },
+			{ name: "ASP.NET", likes: 54564564, dislikes: 0 },
+			{ name: "SQL Server", likes: 0, dislikes: 0 },
+			{ name: "AngularJs", likes: 0, dislikes: 0 },
+		];
+	// name that will be used inside the scope of the controller
+	$scope.technologies = technologies;
+	$scope.rowLimit = 3;
+	$scope.incrementLikes= function(technology){
+		technology.likes++;
+	}
+	$scope.incrementDislikes= function(technology){
+		technology.dislikes++;
+	}
+
+	
+	});
+
+
+
+//creating module for event handler app in ng for like/dislikes
 var eventApp = angular.module("eventApp", [])
 //Creating and registering controller
 	.controller("eventController", function ($scope) {
